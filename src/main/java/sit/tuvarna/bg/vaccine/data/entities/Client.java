@@ -42,7 +42,8 @@ public class Client  implements Serializable {
             (fetch=FetchType.EAGER,mappedBy = "client")
     private User user;
 
-
+    public Client() {
+    }
 
     public Client(Long id_client, String name, String age, String phone, String address, String sex, Set<Pet> pet, User user) {
         this.id_client = id_client;
