@@ -72,8 +72,8 @@ public class UserRepository implements DAORepository<User>{
         Transaction transaction=session.beginTransaction();
         List<User> users=new LinkedList<User>() ;
         try{
-           // String jpql="SELECT u FROM user u WHERE iduser ="+id;
-           // users.addAll(session.createQuery(jpql,User.class).getResultList());
+            String jpql="SELECT u FROM User u WHERE id_user ="+id;
+            users.addAll(session.createQuery(jpql,User.class).getResultList());
             log.info("Succesfully gets all users");
 
         }catch (Exception ex){
@@ -91,8 +91,8 @@ public class UserRepository implements DAORepository<User>{
         Transaction transaction=session.beginTransaction();
         List<User> users=new LinkedList<User>() ;
         try{
-            //String jpql="SELECT u FROM user u";
-            //users.addAll(session.createQuery(jpql,User.class).getResultList());
+            String jpql="SELECT u FROM User u";
+            users.addAll(session.createQuery(jpql,User.class).getResultList());
             log.info("Result all users");
 
         }catch (Exception ex){

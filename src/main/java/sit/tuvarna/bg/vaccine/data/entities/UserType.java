@@ -5,6 +5,10 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Set;
 
+@Table(name = "user_type")
+@Entity
+
+
 public class UserType  implements Serializable {
 
     @Serial

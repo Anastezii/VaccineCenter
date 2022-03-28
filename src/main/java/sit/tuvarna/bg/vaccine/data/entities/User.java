@@ -4,6 +4,10 @@ import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 
+@Table(name = "user")
+@Entity
+
+
 public class User implements Serializable {
 
     @Serial

@@ -3,6 +3,11 @@ package sit.tuvarna.bg.vaccine.data.entities;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Set;
+
+@Table(name = "client")
+@Entity
+
 
 public class Client  implements Serializable {
 
@@ -29,25 +34,24 @@ public class Client  implements Serializable {
     @Column(name="client_sex",nullable = false)
     private String sex;
 
-    @ManyToOne(optional = false)
+    @OneToMany
     @JoinColumn(name="petCl",nullable = false)
-    private Pet pet;
+    private Set<Pet> pets;
 
     @OneToOne
             (fetch=FetchType.EAGER,mappedBy = "client")
     private User user;
 
-    public Client() {
-    }
 
-    public Client(Long id_client, String name, String age, String phone, String address, String sex, Pet pet, User user) {
+
+    public Client(Long id_client, String name, String age, String phone, String address, String sex, Set<Pet> pet, User user) {
         this.id_client = id_client;
         this.name = name;
         this.age = age;
         this.phone = phone;
         this.address = address;
         this.sex = sex;
-        this.pet = pet;
+        this.pets = pet;
         this.user = user;
     }
 
@@ -99,12 +103,12 @@ public class Client  implements Serializable {
         this.sex = sex;
     }
 
-    public Pet getPet() {
-        return pet;
+    public Set<Pet> getPet() {
+        return pets;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setPet(Set<Pet> pets) {
+        this.pets = pets;
     }
 
     public User getUser() {
@@ -124,7 +128,7 @@ public class Client  implements Serializable {
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
                 ", sex='" + sex + '\'' +
-                ", pet=" + pet +
+                ", pet=" + pets +
                 ", user=" + user +
                 '}';
     }
