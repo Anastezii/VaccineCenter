@@ -1,16 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="sit.tuvarna.bg.vaccine.presentation.controllers.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button fx:id="helloButton" text="Hello!" />
-</VBox>
+
+<AnchorPane prefHeight="380.0" prefWidth="520.0" style="-fx-background-color: #87CEFA;"
+            xmlns="http://javafx.com/javafx/14" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sit.tuvarna.bg.vaccine.presentation.controllers.HelloController">
+   <children>
+      <AnchorPane layoutX="-141.0" layoutY="69.0" prefHeight="131.0" prefWidth="209.0">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="184.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/user-interface.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="185.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/1564520_code_open_password_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="loginButton" layoutX="155.0" layoutY="248.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="232.0" style="-fx-background-color: #87CEFA;" text="Sign In" />
+      <Button fx:id="ExitButton" layoutX="371.0" layoutY="307.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="141.0" style="-fx-background-color: #87CEFA;" text="Exit" />
+      <Label layoutX="81.0" layoutY="101.0" text="Your username :">
+         <font>
+            <Font name="Eras Demi ITC" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="81.0" layoutY="149.0" text="Your password :">
+         <font>
+            <Font name="Eras Demi ITC" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="121.0" layoutY="23.0" prefHeight="33.0" prefWidth="307.0" text="Welcome to our Vaccine Center">
+         <font>
+            <Font name="Eras Bold ITC" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="60.0" text="Please SignIn to system">
+         <font>
+            <Font name="Eras Bold ITC" size="14.0" />
+         </font>
+      </Label>
+
+      <TextField fx:id="username" layoutX="223.0" layoutY="145.0" />
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="298.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/log-in.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="32.0" layoutX="396.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/exit.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="101.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/3775235_health_injection_medical_needle_syringe_icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -18,6 +18,10 @@
         <property name="show_sql">true</property>
 
         <mapping class="sit.tuvarna.bg.vaccine.data.entities.User" />
+        <mapping class="sit.tuvarna.bg.vaccine.data.entities.UserType" />
+        <mapping class="sit.tuvarna.bg.vaccine.data.entities.Client" />
+        <mapping class="sit.tuvarna.bg.vaccine.data.entities.Veterinarian" />
+        <mapping class="sit.tuvarna.bg.vaccine.data.entities.Pet" />
 
 
     </session-factory>

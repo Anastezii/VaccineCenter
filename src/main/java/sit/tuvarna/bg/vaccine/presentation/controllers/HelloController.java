@@ -9,6 +9,10 @@ import sit.tuvarna.bg.vaccine.presentation.models.HelloModel;
 
 public class HelloController implements EventHandler<MouseEvent> {
     @FXML
+    public Button loginButton;
+    @FXML
+    public Button ExitButton;
+    @FXML
     private Label welcomeText;
 
     @FXML

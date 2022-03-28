@@ -8,5 +8,16 @@
       <jdbc-url>jdbc:mysql://localhost:3306/vaccine_center</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="sit:tuvarna:bg:vaccine:configuration:hibernate.cfg.xml/Hibernate" uuid="13c59506-f5c2-4457-b758-f9f3c2d41e9c">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/Анастасия/Desktop/универ/УСП проект/VaccineCenter/src/main/resources/sit/tuvarna/bg/vaccine/configuration/hibernate.cfg.xml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/vaccine_center</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
