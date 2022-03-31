@@ -13,6 +13,10 @@ public class HelloController implements EventHandler<MouseEvent> {
     @FXML
     public Button ExitButton;
     @FXML
+    public Button RegistrateClient;
+    @FXML
+    public Button RegistrateVeterinarian;
+    @FXML
     private Label welcomeText;
 
     @FXML
