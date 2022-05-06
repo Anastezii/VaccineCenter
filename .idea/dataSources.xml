@@ -5,7 +5,7 @@
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/vaccine_center</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3307/vaccine_center</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
     <data-source source="LOCAL" name="sit:tuvarna:bg:vaccine:configuration:hibernate.cfg.xml/Hibernate" uuid="13c59506-f5c2-4457-b758-f9f3c2d41e9c">
@@ -17,6 +17,17 @@
 C:/Users/Анастасия/Desktop/универ/УСП проект/VaccineCenter/src/main/resources/sit/tuvarna/bg/vaccine/configuration/hibernate.cfg.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/vaccine_center</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="1c012520-086c-4948-b390-41368d179252">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/User/Desktop/MWS Academy Materials/VaccineCenter/src/main/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3307/vaccineschema</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

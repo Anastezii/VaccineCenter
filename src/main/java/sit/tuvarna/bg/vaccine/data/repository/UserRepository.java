@@ -74,7 +74,7 @@ public class UserRepository implements DAORepository<User>{
         try{
             String jpql="SELECT u FROM User u WHERE id_user ="+id;
             users.addAll(session.createQuery(jpql,User.class).getResultList());
-            log.info("Succesfully gets all users");
+            log.info("Successfully gets all users");
 
         }catch (Exception ex){
             log.error("Get ig user error : "+ex.getMessage());
