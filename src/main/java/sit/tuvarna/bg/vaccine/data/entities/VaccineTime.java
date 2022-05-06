@@ -13,7 +13,7 @@ public class VaccineTime implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idvaccine_time", nullable = false)
-    private Long id_user;
+    private Long id_vaccine_time;
 
     @Column(name="vaccine_time_date",nullable = false)
     private String vaccine_name;
@@ -37,8 +37,8 @@ public class VaccineTime implements Serializable {
     public VaccineTime() {
     }
 
-    public VaccineTime(Long id_user, String vaccine_name, String vaccine_price, Pet pet, Client client, Veterinarian veterinarian) {
-        this.id_user = id_user;
+    public VaccineTime(Long id_vaccine_time, String vaccine_name, String vaccine_price, Pet pet, Client client, Veterinarian veterinarian) {
+        this.id_vaccine_time = id_vaccine_time;
         this.vaccine_name = vaccine_name;
         this.vaccine_price = vaccine_price;
         this.pet = pet;
@@ -46,12 +46,12 @@ public class VaccineTime implements Serializable {
         this.veterinarian = veterinarian;
     }
 
-    public Long getId_user() {
-        return id_user;
+    public Long getId_vaccine_time() {
+        return id_vaccine_time;
     }
 
-    public void setId_user(Long id_user) {
-        this.id_user = id_user;
+    public void setId_vaccine_time(Long id_vaccine_time) {
+        this.id_vaccine_time = id_vaccine_time;
     }
 
     public String getVaccine_name() {
@@ -97,7 +97,7 @@ public class VaccineTime implements Serializable {
     @Override
     public String toString() {
         return "VaccineTime{" +
-                "id_user=" + id_user +
+                "id_vaccine_time=" + id_vaccine_time +
                 ", vaccine_name='" + vaccine_name + '\'' +
                 ", vaccine_price='" + vaccine_price + '\'' +
                 ", pet=" + pet +
