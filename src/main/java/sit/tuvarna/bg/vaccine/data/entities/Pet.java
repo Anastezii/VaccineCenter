@@ -27,7 +27,7 @@ public class Pet implements Serializable {
     private int pet_year_birth;
 
     @ManyToOne(optional = false)
-    @Column(name="pet_type",nullable = false)
+    @JoinColumn(name="pet_type",nullable = false)
     private PetType pet_type;
 
     @Column(name="pet_sex",nullable = false)
@@ -36,7 +36,10 @@ public class Pet implements Serializable {
     @Column(name="pet_category",nullable = false)
     private String pet_category;
 
-    public Pet(Long id_pet, String pet_name, String pet_weight, int pet_year_birth, PetType pet_type, String pet_sex, String pet_category) {
+    @ManyToOne(optional = false)
+    private Client client;
+
+    public Pet(Long id_pet, String pet_name, String pet_weight, int pet_year_birth, PetType pet_type, String pet_sex, String pet_category, Client client) {
         this.id_pet = id_pet;
         this.pet_name = pet_name;
         this.pet_weight = pet_weight;
@@ -44,6 +47,7 @@ public class Pet implements Serializable {
         this.pet_type = pet_type;
         this.pet_sex = pet_sex;
         this.pet_category = pet_category;
+        this.client = client;
     }
 
     public Pet() {
@@ -106,6 +110,14 @@ public class Pet implements Serializable {
         this.pet_category = pet_category;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
     @Override
     public String toString() {
         return "Pet{" +
@@ -116,6 +128,7 @@ public class Pet implements Serializable {
                 ", pet_type=" + pet_type +
                 ", pet_sex='" + pet_sex + '\'' +
                 ", pet_category='" + pet_category + '\'' +
+                ", client=" + client +
                 '}';
     }
 }
