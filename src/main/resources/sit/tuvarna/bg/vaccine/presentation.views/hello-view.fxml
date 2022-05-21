@@ -2,16 +2,18 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="380.0" prefWidth="520.0" style="-fx-background-color: #87CEFA;"
-            xmlns="http://javafx.com/javafx/14" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sit.tuvarna.bg.vaccine.presentation.controllers.HelloController">
+<?import javafx.scene.control.PasswordField?>
+<AnchorPane prefHeight="380.0" prefWidth="520.0" style="-fx-background-color: #87CEFA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sit.tuvarna.bg.vaccine.presentation.controllers.HelloController">
    <children>
       <AnchorPane layoutX="-141.0" layoutY="69.0" prefHeight="131.0" prefWidth="209.0" />
-      <Button fx:id="loginButton" layoutX="159.0" layoutY="114.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="232.0" style="-fx-background-color: #87CEFA;" text="Sign In">
+      <Button fx:id="loginButton" layoutX="131.0" layoutY="253.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="232.0" style="-fx-background-color: #87CEFA;" text="Sign In">
          <font>
             <Font name="Cambria" size="14.0" />
          </font></Button>
@@ -26,7 +28,7 @@
             <Font name="Eras Bold ITC" size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="304.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="286.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/log-in.png" />
          </image>
@@ -41,26 +43,17 @@
             <Image url="@../img/3775235_health_injection_medical_needle_syringe_icon.png" />
          </image>
       </ImageView>
-      <Button fx:id="RegistrateClient" layoutX="179.0" layoutY="178.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="225.0" style="-fx-background-color: #87CEFA;" text="Registrate as client">
+      <TextField fx:id="textLogin" layoutX="173.0" layoutY="122.0" prefHeight="32.0" prefWidth="191.0" />
+      <PasswordField fx:id="passwordField" layoutX="173.0" layoutY="180.0" prefHeight="33.0" prefWidth="191.0" />
+      <Text layoutX="57.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
          <font>
-            <Font name="Cambria" size="14.0" />
+            <Font name="Berlin Sans FB" size="14.0" />
          </font>
-      </Button>
-      <Button fx:id="RegistrateVeterinarian" layoutX="187.0" layoutY="233.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="209.0"
-              style="-fx-background-color: #87CEFA;" text="Registrate as veterinarian">
+      </Text>
+      <Text layoutX="56.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
-            <Font name="Cambria" size="14.0" />
+            <Font name="Berlin Sans FB" size="14.0" />
          </font>
-      </Button>
-      <ImageView fitHeight="24.0" fitWidth="32.0" layoutX="353.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/103774_add_user_half_icon.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="24.0" layoutX="371.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/103774_add_user_half_icon.png" />
-         </image>
-      </ImageView>
+      </Text>
    </children>
 </AnchorPane>

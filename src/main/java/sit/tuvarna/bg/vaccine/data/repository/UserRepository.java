@@ -13,7 +13,7 @@ public class UserRepository implements DAORepository<User> {
 
     private static final Logger log = Logger.getLogger(UserRepository.class);
 
-    private static UserRepository getInstance() {
+    public static UserRepository getInstance() {
         return UserRepository.UserRepositoryHolder.INSTANCE;
     }
 
@@ -102,6 +102,25 @@ public class UserRepository implements DAORepository<User> {
         }
         session.close();
         return users;
+    }
+
+    public List<User> getLogin(String login,String pass){
+        Session session= Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        List<User> admins =new LinkedList<User>() ;
+        try{
+            String jpql="SELECT t FROM User t WHERE t.login= :login AND t.password= :pass ";
+            admins.addAll(session.createQuery(jpql, User.class).setParameter("login",login).
+                    setParameter("pass",pass).getResultList());
+            log.info("Result all users which matched.");
+
+        }catch (Exception ex){
+            log.error("Get users error : "+ex.getCause());
+        }finally {
+            transaction.commit();
+        }
+        session.close();
+        return admins;
     }
 
 
