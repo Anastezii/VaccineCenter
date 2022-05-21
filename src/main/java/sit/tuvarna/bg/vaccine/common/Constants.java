@@ -12,6 +12,7 @@ public class Constants {
 
         public static final String LOG4J="/sit/tuvarna/bg/vaccine/configuration/log4j.properties";
 
+
     }
 
     public static class Values{

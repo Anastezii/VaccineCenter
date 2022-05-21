@@ -3,6 +3,7 @@ package sit.tuvarna.bg.vaccine.data.entities;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.text.DateFormat;
 
 @Table(name="vaccine_time")
 @Entity
@@ -16,7 +17,7 @@ public class VaccineTime implements Serializable {
     private Long id_vaccine_time;
 
     @Column(name="vaccine_time_date",nullable = false)
-    private String vaccine_name;
+    private DateFormat vaccine_date;
 
     @Column(name="vaccine_time_price",nullable = false)
     private String vaccine_price;
@@ -33,17 +34,22 @@ public class VaccineTime implements Serializable {
     @JoinColumn(name="veterinarian",nullable = false)
     private Veterinarian veterinarian;
 
+    @OneToOne
+    @JoinColumn(name="vaccine_name",nullable = false)
+    private Vaccine vaccine;
+
 
     public VaccineTime() {
     }
 
-    public VaccineTime(Long id_vaccine_time, String vaccine_name, String vaccine_price, Pet pet, Client client, Veterinarian veterinarian) {
+    public VaccineTime(Long id_vaccine_time, DateFormat vaccine_date, String vaccine_price, Pet pet, Client client, Veterinarian veterinarian, Vaccine vaccine) {
         this.id_vaccine_time = id_vaccine_time;
-        this.vaccine_name = vaccine_name;
+        this.vaccine_date = vaccine_date;
         this.vaccine_price = vaccine_price;
         this.pet = pet;
         this.client = client;
         this.veterinarian = veterinarian;
+        this.vaccine = vaccine;
     }
 
     public Long getId_vaccine_time() {
@@ -54,12 +60,20 @@ public class VaccineTime implements Serializable {
         this.id_vaccine_time = id_vaccine_time;
     }
 
-    public String getVaccine_name() {
-        return vaccine_name;
+    public DateFormat getVaccine_date() {
+        return vaccine_date;
     }
 
-    public void setVaccine_name(String vaccine_name) {
-        this.vaccine_name = vaccine_name;
+    public void setVaccine_date(DateFormat vaccine_date) {
+        this.vaccine_date = vaccine_date;
+    }
+
+    public Vaccine getVaccine() {
+        return vaccine;
+    }
+
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
     }
 
     public String getVaccine_price() {
@@ -98,11 +112,12 @@ public class VaccineTime implements Serializable {
     public String toString() {
         return "VaccineTime{" +
                 "id_vaccine_time=" + id_vaccine_time +
-                ", vaccine_name='" + vaccine_name + '\'' +
+                ", vaccine_date=" + vaccine_date +
                 ", vaccine_price='" + vaccine_price + '\'' +
                 ", pet=" + pet +
                 ", client=" + client +
                 ", veterinarian=" + veterinarian +
+                ", vaccine=" + vaccine +
                 '}';
     }
 }
