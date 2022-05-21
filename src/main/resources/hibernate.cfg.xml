@@ -22,6 +22,8 @@
         <mapping class="sit.tuvarna.bg.vaccine.data.entities.Client" />
         <mapping class="sit.tuvarna.bg.vaccine.data.entities.Veterinarian" />
         <mapping class="sit.tuvarna.bg.vaccine.data.entities.Pet" />
+        <mapping class="sit.tuvarna.bg.vaccine.data.entities.Vaccine" />
+        <mapping class="sit.tuvarna.bg.vaccine.data.entities.VaccineTime" />
 
 
     </session-factory>
