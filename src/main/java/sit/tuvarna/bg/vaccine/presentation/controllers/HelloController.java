@@ -35,13 +35,12 @@ public class HelloController implements EventHandler<MouseEvent> {
 
     @FXML
     private PasswordField passwordField;
-
-
-    @FXML
-    private Label welcomeText;
+/*
 
     @FXML
-    private Button helloButton;
+    private Label welcomeText;*/
+
+
 
     //private final HelloModel model;
 
@@ -56,7 +55,7 @@ public class HelloController implements EventHandler<MouseEvent> {
 
     @FXML
     private void initialize(){
-        helloButton.setOnMouseClicked(this::handle);
+        loginButton.setOnMouseClicked(this::handle);
 
     }
 
