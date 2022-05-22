@@ -5,9 +5,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import static sit.tuvarna.bg.vaccine.data.acces.Connection.openSession;
-
-
 public class Connection {
 
     private static final Logger log= Logger.getLogger(Connection.class);

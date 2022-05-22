@@ -2,7 +2,7 @@ module sit.tuvarna.bg.vaccine {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
-    requires java.naming;
+
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
@@ -13,6 +13,11 @@ module sit.tuvarna.bg.vaccine {
     requires log4j;
     requires org.hibernate.orm.core;
     requires java.persistence;
+
+    requires java.naming;
+    requires java.sql;
+    requires mysql.connector.java;
+    requires lombok;
 
 
     exports sit.tuvarna.bg.vaccine.application;

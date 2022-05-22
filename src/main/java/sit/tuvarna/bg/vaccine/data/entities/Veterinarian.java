@@ -35,7 +35,7 @@ public class Veterinarian  implements Serializable {
     private String sex;
 
     @OneToOne
-            (fetch=FetchType.EAGER,mappedBy = "veterinarianId")
+            (fetch=FetchType.EAGER)
     private User user;
 
     @OneToMany
