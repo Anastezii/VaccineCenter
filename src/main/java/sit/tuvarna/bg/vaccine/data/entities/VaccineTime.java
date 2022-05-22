@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.text.DateFormat;
+import java.util.Set;
 
 @Table(name="vaccine_time")
 @Entity
@@ -34,22 +35,22 @@ public class VaccineTime implements Serializable {
     @JoinColumn(name="veterinarian",nullable = false)
     private Veterinarian veterinarian;
 
-    @OneToOne
+    @OneToMany
     @JoinColumn(name="vaccine_name",nullable = false)
-    private Vaccine vaccine;
+    private Set<Vaccine> vaccineSet;
 
 
     public VaccineTime() {
     }
 
-    public VaccineTime(Long id_vaccine_time, DateFormat vaccine_date, String vaccine_price, Pet pet, Client client, Veterinarian veterinarian, Vaccine vaccine) {
+    public VaccineTime(Long id_vaccine_time, DateFormat vaccine_date, String vaccine_price, Pet pet, Client client, Veterinarian veterinarian, Set<Vaccine> vaccineSet) {
         this.id_vaccine_time = id_vaccine_time;
         this.vaccine_date = vaccine_date;
         this.vaccine_price = vaccine_price;
         this.pet = pet;
         this.client = client;
         this.veterinarian = veterinarian;
-        this.vaccine = vaccine;
+        this.vaccineSet = vaccineSet;
     }
 
     public Long getId_vaccine_time() {
@@ -68,12 +69,12 @@ public class VaccineTime implements Serializable {
         this.vaccine_date = vaccine_date;
     }
 
-    public Vaccine getVaccine() {
-        return vaccine;
+    public Set<Vaccine> getVaccineSet() {
+        return vaccineSet;
     }
 
-    public void setVaccine(Vaccine vaccine) {
-        this.vaccine = vaccine;
+    public void setVaccineSet(Set<Vaccine> vaccineSet) {
+        this.vaccineSet = vaccineSet;
     }
 
     public String getVaccine_price() {
@@ -117,7 +118,7 @@ public class VaccineTime implements Serializable {
                 ", pet=" + pet +
                 ", client=" + client +
                 ", veterinarian=" + veterinarian +
-                ", vaccine=" + vaccine +
+                ", vaccineSet=" + vaccineSet +
                 '}';
     }
 }

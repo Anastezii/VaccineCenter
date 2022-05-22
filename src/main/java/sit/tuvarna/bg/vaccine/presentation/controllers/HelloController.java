@@ -56,7 +56,12 @@ public class HelloController implements EventHandler<MouseEvent> {
     @FXML
     private void initialize(){
         loginButton.setOnMouseClicked(this::handle);
+        ExitButton.setOnMouseClicked(this::handle2);
 
+    }
+
+    private void handle2(MouseEvent mouseEvent) {
+        System.out.println("error in adm");
     }
 
     @Override

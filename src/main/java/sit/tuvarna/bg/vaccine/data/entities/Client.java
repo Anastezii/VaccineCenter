@@ -42,6 +42,26 @@ public class Client  implements Serializable {
             (fetch=FetchType.EAGER,mappedBy = "client")
     private User user;
 
+    @OneToMany
+            (fetch=FetchType.EAGER,mappedBy = "client")
+    private  Set<VaccineTime> vaccineTimes;
+
+    public Set<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
+    }
+
+    public Set<VaccineTime> getVaccineTimes() {
+        return vaccineTimes;
+    }
+
+    public void setVaccineTimes(Set<VaccineTime> vaccineTimes) {
+        this.vaccineTimes = vaccineTimes;
+    }
+
     public Client() {
     }
 

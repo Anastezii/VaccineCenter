@@ -14,17 +14,11 @@ public class Connection {
     private static SessionFactory sessionFactory;
 
     static{
-
         try{
-
-            sessionFactory=new Configuration().configure().buildSessionFactory();
-
+            sessionFactory = new Configuration().configure("/hibernate.cfg.xml").buildSessionFactory();
         }catch(Throwable ex){
-
             log.error("Initial SessionFactory created failed"+ex.getCause());
-
         }
-
     }
 
     public static Session openSession(){

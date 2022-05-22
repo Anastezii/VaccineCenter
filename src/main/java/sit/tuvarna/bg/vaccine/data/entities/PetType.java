@@ -20,8 +20,7 @@ public class PetType implements Serializable {
     @Column(name="pet_type_name",nullable = false)
     private String pet_type_name;
 
-    @OneToMany
-            (fetch= FetchType.EAGER,mappedBy="pet_type")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pet_type")
     private Set<Pet> pets;
 
 

@@ -3,6 +3,7 @@ package sit.tuvarna.bg.vaccine.data.entities;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Set;
 
 @Table(name="vaccine")
 @Entity
@@ -18,6 +19,9 @@ public class Vaccine implements Serializable {
 
     @Column(name="vaccine_name",nullable = false)
     private String vaccine_name;
+
+    @ManyToOne(fetch =FetchType.LAZY )
+    private VaccineTime vaccineTime;
 
     public Vaccine() {
     }

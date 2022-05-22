@@ -3,6 +3,7 @@ package sit.tuvarna.bg.vaccine.data.entities;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Set;
 
 @Table(name = "veterinarian")
 @Entity
@@ -32,6 +33,30 @@ public class Veterinarian  implements Serializable {
 
     @Column(name="veterinarian_sex",nullable = false)
     private String sex;
+
+    @OneToOne
+            (fetch=FetchType.EAGER,mappedBy = "veterinarianId")
+    private User user;
+
+    @OneToMany
+            (fetch=FetchType.EAGER,mappedBy = "veterinarian")
+    private Set<VaccineTime> vaccineTimes;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<VaccineTime> getVaccineTimes() {
+        return vaccineTimes;
+    }
+
+    public void setVaccineTimes(Set<VaccineTime> vaccineTimes) {
+        this.vaccineTimes = vaccineTimes;
+    }
 
     public Veterinarian() {
     }

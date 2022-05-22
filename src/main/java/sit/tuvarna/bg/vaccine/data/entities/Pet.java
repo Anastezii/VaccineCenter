@@ -3,6 +3,7 @@ package sit.tuvarna.bg.vaccine.data.entities;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Set;
 
 @Table(name = "pet")
 @Entity
@@ -36,8 +37,21 @@ public class Pet implements Serializable {
     @Column(name="pet_category",nullable = false)
     private String pet_category;
 
-    @ManyToOne(optional = false)
+    @ManyToOne
+            (fetch = FetchType.LAZY)
     private Client client;
+
+    @OneToMany
+            (fetch=FetchType.EAGER,mappedBy = "pet")
+    private Set<VaccineTime> vaccineTimes;
+
+    public Set<VaccineTime> getVaccineTimes() {
+        return vaccineTimes;
+    }
+
+    public void setVaccineTimes(Set<VaccineTime> vaccineTimes) {
+        this.vaccineTimes = vaccineTimes;
+    }
 
     public Pet(Long id_pet, String pet_name, String pet_weight, int pet_year_birth, PetType pet_type, String pet_sex, String pet_category, Client client) {
         this.id_pet = id_pet;

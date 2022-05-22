@@ -23,8 +23,7 @@ public class UserType  implements Serializable {
     @Column(name="user_type_name",nullable = false)
     private String type_name;
 
-    @OneToMany
-            (fetch= FetchType.EAGER,mappedBy="user_type")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "iduser_type")
     private Set<User> users;
 
 

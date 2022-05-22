@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.control.PasswordField?>
-<AnchorPane prefHeight="380.0" prefWidth="520.0" style="-fx-background-color: #87CEFA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sit.tuvarna.bg.vaccine.presentation.controllers.HelloController">
+<AnchorPane prefHeight="380.0" prefWidth="520.0" style="-fx-background-color: #87CEFA;" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sit.tuvarna.bg.vaccine.presentation.controllers.HelloController">
    <children>
       <AnchorPane layoutX="-141.0" layoutY="69.0" prefHeight="131.0" prefWidth="209.0" />
       <Button fx:id="loginButton" layoutX="131.0" layoutY="253.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="232.0" style="-fx-background-color: #87CEFA;" text="Sign In">
