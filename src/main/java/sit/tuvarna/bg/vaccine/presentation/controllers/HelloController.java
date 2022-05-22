@@ -61,7 +61,8 @@ public class HelloController implements EventHandler<MouseEvent> {
     }
 
     private void handle2(MouseEvent mouseEvent) {
-        System.out.println("error in adm");
+       Stage stage=(Stage) ExitButton.getScene().getWindow();
+       stage.close();
     }
 
     @Override
