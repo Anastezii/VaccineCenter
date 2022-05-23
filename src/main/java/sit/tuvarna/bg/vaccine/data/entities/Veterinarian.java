@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Set;
+import org.hibernate.annotations.Entity;
 
 @Table(name = "veterinarian")
 @Entity
@@ -35,7 +36,7 @@ public class Veterinarian  implements Serializable {
     private String sex;
 
     @OneToOne
-            (fetch=FetchType.EAGER)
+            (mappedBy = "veterinar")
     private User user;
 
     @OneToMany

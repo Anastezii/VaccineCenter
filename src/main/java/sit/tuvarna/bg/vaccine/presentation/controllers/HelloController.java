@@ -78,7 +78,8 @@ public class HelloController implements EventHandler<MouseEvent> {
             if(user.getLogin().equals(login) && user.getPassword().equals(pass)){
                 Login=true;
                 System.out.println("True");
-                extracted();
+                loginButton.setOnMouseClicked(this::extracted);
+
             }
             else{
                 System.out.println("error in adm");
@@ -87,7 +88,7 @@ public class HelloController implements EventHandler<MouseEvent> {
         }
     }
 
-    private void extracted() {
+    private void extracted(MouseEvent mouseEvent) {
         Parent root;
         try{
             URL pathAdminWindow = getClass().getResource("/sit/tuvarna/bg/vaccine/presentation.view/ProfileCl.fxml");
@@ -96,7 +97,7 @@ public class HelloController implements EventHandler<MouseEvent> {
             stage.setTitle("Client Window");
             stage.setScene(new Scene(root));
             stage.show();
-            //((Node)(event.getSource())).getScene().getWindow().hide();
+            ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
         }catch(IOException e){
             e.getCause();
         }

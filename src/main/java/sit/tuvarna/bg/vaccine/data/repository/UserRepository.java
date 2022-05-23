@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import sit.tuvarna.bg.vaccine.data.acces.Connection;
 import sit.tuvarna.bg.vaccine.data.entities.User;
 
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -109,7 +110,7 @@ public class UserRepository implements DAORepository<User> {
         Transaction transaction=session.beginTransaction();
         List<User> admins =new LinkedList<User>() ;
         try{
-            String jpql="SELECT t FROM User t WHERE t.login= :login AND t.password= :pass ";
+            String jpql="SELECT t FROM User t WHERE t.login=:login AND t.password= :pass ";
             admins.addAll(session.createQuery(jpql, User.class).setParameter("login",login).
                     setParameter("pass",pass).getResultList());
             log.info("Result all users which matched.");

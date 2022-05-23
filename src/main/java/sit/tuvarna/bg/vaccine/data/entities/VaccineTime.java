@@ -5,6 +5,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.Set;
+import org.hibernate.annotations.Entity;
 
 @Table(name="vaccine_time")
 @Entity

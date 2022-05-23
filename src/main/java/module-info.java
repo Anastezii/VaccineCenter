@@ -14,6 +14,7 @@ module sit.tuvarna.bg.vaccine {
     requires org.hibernate.orm.core;
     requires java.persistence;
 
+
     requires java.naming;
     requires java.sql;
     requires mysql.connector.java;

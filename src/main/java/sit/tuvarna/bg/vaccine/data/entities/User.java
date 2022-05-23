@@ -3,6 +3,9 @@ package sit.tuvarna.bg.vaccine.data.entities;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import org.hibernate.annotations.Entity;
+
+
 
 @Table(name = "user")
 @Entity
@@ -24,8 +27,8 @@ public class User implements Serializable {
     @Column(name="user_pass",nullable = false)
     private String password;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name="user_type",nullable = false)
+    @OneToOne(optional = false)
+    @JoinColumn(name="user_type",nullable = false,referencedColumnName="iduser_type")
     private UserType user_type;
 
     @OneToOne(optional = false)
@@ -33,7 +36,7 @@ public class User implements Serializable {
     private Client client;
 
     @OneToOne(optional = false)
-    @JoinColumn(name="veterinarianId",nullable = true)
+    @JoinColumn(name="veterinarianId",nullable = true,referencedColumnName = "idveterinarian")
     private Veterinarian veterinar;
 
 

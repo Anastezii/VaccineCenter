@@ -4,7 +4,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" />
+          <unit-entry name="hibernate.cfg.xml" value="8bbbec24-eb2d-47cf-b5b1-04dc5fbc899f" />
           <unit-entry name="sit:tuvarna:bg:vaccine:configuration:hibernate.cfg.xml" value="13c59506-f5c2-4457-b758-f9f3c2d41e9c" />
         </datasource-map>
         <naming-strategy-map />
@@ -20,6 +20,9 @@
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_15">
@@ -106,5 +109,19 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.29" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.19.4" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.24" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-jpa:2.0.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.0.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-orm:5.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.0.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.12" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Maven: org.javassist:javassist:3.23.1-GA" level="project" />
   </component>
 </module>
