@@ -3,12 +3,13 @@ package sit.tuvarna.bg.vaccine.data.entities;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
-import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.Set;
 import org.hibernate.annotations.Entity;
 
 @Table(name="vaccine_time")
 @Entity
+
 public class VaccineTime implements Serializable {
     @Serial
     private static final long serialVersionUID =1L;
@@ -19,13 +20,13 @@ public class VaccineTime implements Serializable {
     private Long id_vaccine_time;
 
     @Column(name="vaccine_time_date",nullable = false)
-    private DateFormat vaccine_date;
+    private LocalDate vaccine_date;
 
     @Column(name="vaccine_time_price",nullable = false)
     private String vaccine_price;
 
     @ManyToOne
-    @JoinColumn(name="pet",nullable = false)
+    @JoinColumn(name="pet",nullable = false,referencedColumnName = "idpet")
     private Pet pet;
 
     @ManyToOne
@@ -44,7 +45,7 @@ public class VaccineTime implements Serializable {
     public VaccineTime() {
     }
 
-    public VaccineTime(Long id_vaccine_time, DateFormat vaccine_date, String vaccine_price, Pet pet, Client client, Veterinarian veterinarian, Set<Vaccine> vaccineSet) {
+    public VaccineTime(Long id_vaccine_time, LocalDate vaccine_date, String vaccine_price, Client client, Veterinarian veterinarian, Set<Vaccine> vaccineSet) {
         this.id_vaccine_time = id_vaccine_time;
         this.vaccine_date = vaccine_date;
         this.vaccine_price = vaccine_price;
@@ -62,11 +63,11 @@ public class VaccineTime implements Serializable {
         this.id_vaccine_time = id_vaccine_time;
     }
 
-    public DateFormat getVaccine_date() {
+    public LocalDate getVaccine_date() {
         return vaccine_date;
     }
 
-    public void setVaccine_date(DateFormat vaccine_date) {
+    public void setVaccine_date(LocalDate vaccine_date) {
         this.vaccine_date = vaccine_date;
     }
 

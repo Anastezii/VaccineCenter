@@ -5,11 +5,8 @@ import java.io.Serial;
 import java.io.Serializable;
 import org.hibernate.annotations.Entity;
 
-
-
 @Table(name = "user")
 @Entity
-
 
 public class User implements Serializable {
 

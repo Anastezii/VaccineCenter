@@ -35,7 +35,7 @@ public class Client  implements Serializable {
     @Column(name="client_sex",nullable = false)
     private String sex;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name="petCl",nullable = false)
     private Set<Pet> pets;
 

@@ -8,6 +8,7 @@ import org.hibernate.annotations.Entity;
 
 @Table(name="vaccine")
 @Entity
+
 public class Vaccine implements Serializable {
 
     @Serial

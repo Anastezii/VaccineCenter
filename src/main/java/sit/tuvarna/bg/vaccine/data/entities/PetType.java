@@ -8,6 +8,7 @@ import org.hibernate.annotations.Entity;
 
 @Table(name = "pet_type")
 @Entity
+
 public class PetType implements Serializable {
     @Serial
     private static final long serialVersionUID=1L;
@@ -21,14 +22,14 @@ public class PetType implements Serializable {
     @Column(name="pet_type_name",nullable = false)
     private String pet_type_name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pet_type")
-    private Set<Pet> pets;
+    @OneToOne( mappedBy = "pet_type")
+    private Pet pets;
 
 
     public PetType() {
     }
 
-    public PetType(Long id_pet_type, String pet_type_name, Set<Pet> pets) {
+    public PetType(Long id_pet_type, String pet_type_name,Pet pets) {
         this.id_pet_type = id_pet_type;
         this.pet_type_name = pet_type_name;
         this.pets = pets;
@@ -50,11 +51,11 @@ public class PetType implements Serializable {
         this.pet_type_name = pet_type_name;
     }
 
-    public Set<Pet> getPets() {
+    public Pet getPets() {
         return pets;
     }
 
-    public void setPets(Set<Pet> pets) {
+    public void setPets(Pet pets) {
         this.pets = pets;
     }
 

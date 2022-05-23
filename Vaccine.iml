@@ -16,7 +16,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="Vaccine" />
+          <factory-entry name="Vaccine" value="8bbbec24-eb2d-47cf-b5b1-04dc5fbc899f" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
