@@ -17,7 +17,7 @@ public class Constants {
 
     public static class Values{
 
-        public static final String Title="Example";
+        public static final String Title="Vaccine Center";
 
     }
 

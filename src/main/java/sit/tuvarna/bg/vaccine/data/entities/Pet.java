@@ -25,9 +25,9 @@ public class Pet implements Serializable {
     private String pet_weight;
 
     @Column(name="pet_year_birth",nullable = false)
-    private int pet_year_birth;
+    private String pet_year_birth;
 
-    @ManyToOne(optional = false)
+    @OneToOne(optional = false)
     @JoinColumn(name="pet_type",nullable = false)
     private PetType pet_type;
 
@@ -53,7 +53,7 @@ public class Pet implements Serializable {
         this.vaccineTimes = vaccineTimes;
     }
 
-    public Pet(Long id_pet, String pet_name, String pet_weight, int pet_year_birth, PetType pet_type, String pet_sex, String pet_category, Client client) {
+    public Pet(Long id_pet, String pet_name, String pet_weight, String pet_year_birth, PetType pet_type, String pet_sex, String pet_category, Client client) {
         this.id_pet = id_pet;
         this.pet_name = pet_name;
         this.pet_weight = pet_weight;
@@ -92,11 +92,11 @@ public class Pet implements Serializable {
         this.pet_weight = pet_weight;
     }
 
-    public int getPet_year_birth() {
+    public String getPet_year_birth() {
         return pet_year_birth;
     }
 
-    public void setPet_year_birth(int pet_year_birth) {
+    public void setPet_year_birth(String pet_year_birth) {
         this.pet_year_birth = pet_year_birth;
     }
 

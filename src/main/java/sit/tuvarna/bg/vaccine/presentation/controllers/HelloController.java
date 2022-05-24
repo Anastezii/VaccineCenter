@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import sit.tuvarna.bg.vaccine.business.services.UserService;
@@ -29,6 +26,10 @@ public class HelloController implements EventHandler<MouseEvent> {
     public Button loginButton;
     @FXML
     public Button ExitButton;
+    @FXML
+    public RadioButton ClientRadio;
+    @FXML
+    public RadioButton VeterinarRadio;
 
     @FXML
     private TextField textLogin;
@@ -78,7 +79,12 @@ public class HelloController implements EventHandler<MouseEvent> {
             if(user.getLogin().equals(login) && user.getPassword().equals(pass)){
                 Login=true;
                 System.out.println("True");
-                loginButton.setOnMouseClicked(this::extracted);
+                if (ClientRadio.isSelected()){
+                    loginButton.setOnMouseClicked(this::extracted);
+                }else if (VeterinarRadio.isSelected()){
+                    loginButton.setOnMouseClicked(this::extracted2);
+                }
+
 
             }
             else{
@@ -86,6 +92,23 @@ public class HelloController implements EventHandler<MouseEvent> {
                 Login=false;
             }
         }
+    }
+
+    private void extracted2(MouseEvent mouseEvent) {
+
+        Parent root;
+        try{
+            URL pathAdminWindow = getClass().getResource("/sit/tuvarna/bg/vaccine/presentation.views/VeterinsarProfile.fxml");
+            root= FXMLLoader.load(pathAdminWindow);
+            Stage stage=new Stage();
+            stage.setTitle("Client Window");
+            stage.setScene(new Scene(root));
+            stage.show();
+            ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();
+        }catch(IOException e){
+            e.getCause();
+        }
+
     }
 
     private void extracted(MouseEvent mouseEvent) {
