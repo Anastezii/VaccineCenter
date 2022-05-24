@@ -12,18 +12,18 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
-public class ProfileCl {
+public class VeterinarProfileController {
     @FXML
-    public Button PetsButton;
-    @FXML
-    public Button VaccinePetsButton;
+    public Button AllVaccineButton;
     @FXML
     public Button ReturnButton;
+    @FXML
+    public Button InputVaccineButton;
 
     @FXML
     private void initialize(){
-        PetsButton.setOnMouseClicked(this::handle);
-        VaccinePetsButton.setOnMouseClicked(this::handle2);
+        AllVaccineButton.setOnMouseClicked(this::handle);
+        InputVaccineButton.setOnMouseClicked(this::handle2);
         ReturnButton.setOnMouseClicked(this::handle3);
 
     }
@@ -49,7 +49,7 @@ public class ProfileCl {
 
         Parent root;
         try{
-            URL pathAdminWindow = getClass().getResource("/sit/tuvarna/bg/vaccine/presentation.views/VaccinePetsClient.fxml");
+            URL pathAdminWindow = getClass().getResource("/sit/tuvarna/bg/vaccine/presentation.views/InputVaccine.fxml");
             root= FXMLLoader.load(pathAdminWindow);
             Stage stage=new Stage();
             stage.setTitle("Client Window");
@@ -61,11 +61,13 @@ public class ProfileCl {
         }
 
     }
+
 
     private void handle(MouseEvent mouseEvent) {
+
         Parent root;
         try{
-            URL pathAdminWindow = getClass().getResource("/sit/tuvarna/bg/vaccine/presentation.views/PetClient.fxml");
+            URL pathAdminWindow = getClass().getResource("/sit/tuvarna/bg/vaccine/presentation.views/AllVaccine.fxml");
             root= FXMLLoader.load(pathAdminWindow);
             Stage stage=new Stage();
             stage.setTitle("Client Window");
@@ -75,9 +77,8 @@ public class ProfileCl {
         }catch(IOException e){
             e.getCause();
         }
+
     }
-
-
 
 
 }

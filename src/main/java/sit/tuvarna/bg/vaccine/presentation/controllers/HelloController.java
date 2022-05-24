@@ -91,7 +91,7 @@ public class HelloController implements EventHandler<MouseEvent> {
     private void extracted(MouseEvent mouseEvent) {
         Parent root;
         try{
-            URL pathAdminWindow = getClass().getResource("/sit/tuvarna/bg/vaccine/presentation.view/ProfileCl.fxml");
+            URL pathAdminWindow = getClass().getResource("/sit/tuvarna/bg/vaccine/presentation.views/ProfileCl.fxml");
             root= FXMLLoader.load(pathAdminWindow);
             Stage stage=new Stage();
             stage.setTitle("Client Window");
