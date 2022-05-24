@@ -20,10 +20,14 @@ module sit.tuvarna.bg.vaccine {
     requires mysql.connector.java;
     requires lombok;
 
+    opens sit.tuvarna.bg.vaccine.data.entities to org.hibernate.orm.core;
+    exports sit.tuvarna.bg.vaccine.data.entities;
+
+    opens sit.tuvarna.bg.vaccine.data.acces to org.hibernate.orm.core;
+    exports sit.tuvarna.bg.vaccine.data.acces;
 
     exports sit.tuvarna.bg.vaccine.application;
     opens sit.tuvarna.bg.vaccine.application to javafx.fxml;
-
 
     exports sit.tuvarna.bg.vaccine.presentation.controllers;
     opens sit.tuvarna.bg.vaccine.presentation.controllers to javafx.fxml;

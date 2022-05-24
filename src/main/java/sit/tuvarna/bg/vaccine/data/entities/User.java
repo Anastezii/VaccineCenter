@@ -3,7 +3,6 @@ package sit.tuvarna.bg.vaccine.data.entities;
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
-import org.hibernate.annotations.Entity;
 
 @Table(name = "user")
 @Entity
