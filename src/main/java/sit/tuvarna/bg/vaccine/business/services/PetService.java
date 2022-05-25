@@ -32,4 +32,18 @@ public class PetService {
 
     }
 
+    public boolean ifPetExist(String petName){
+        Pet petValue=repository.getPet(petName);
+        if(petValue==null){
+
+            return false;
+        }
+        else{
+            return true;
+
+        }
+
+    }
+
+
 }

@@ -64,6 +64,16 @@ public class VaccineTime implements Serializable {
 
     }
 
+    public VaccineTime(String vaccine_price, LocalDate vaccine_date, Pet pet, Vaccine vaccineSet, Veterinarian veterinarian) {
+        this.vaccine_date = vaccine_date;
+        this.vaccine_price = vaccine_price;
+        this.pet = pet;
+        this.veterinarian = veterinarian;
+        this.vaccineSet = vaccineSet;
+
+
+    }
+
     public Long getId_vaccine_time() {
         return id_vaccine_time;
     }

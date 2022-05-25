@@ -146,5 +146,11 @@ public class VaccineService {
 
     }
 
+    public ObservableList<VaccineTime> getAllTaskClient(){
+        List< VaccineTime> vaccineTimes=repository.getAll();
+        return FXCollections.observableList(vaccineTimes.stream().map(o->new VaccineTime(o.getVaccine_price(),o.getVaccine_date(),o.getPet(),
+                o.getVaccineSet(),o.getVeterinarian())).collect(Collectors.toList()));
+
+    }
 
 }

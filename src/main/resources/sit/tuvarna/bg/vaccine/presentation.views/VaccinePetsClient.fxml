@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sit.tuvarna.bg.vaccine.presentation.controllers.VaccinePetsClientController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #87CEFA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sit.tuvarna.bg.vaccine.presentation.controllers.VaccinePetsClientController">
+   <children>
+      <ImageView fitHeight="52.0" fitWidth="55.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/dog.png" />
+         </image>
+      </ImageView>
+    
+      <Button fx:id="ReturnButton" layoutX="155.0" layoutY="298.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="253.0" style="-fx-background-color: #87CEFA;" text="Return to profile page">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font>
+      </Button>
+      <Text layoutX="96.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pet Vaccine">
+         <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="22.0" fitWidth="24.0" layoutX="351.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/log-in.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="petVaccineList" layoutX="117.0" layoutY="66.0" prefHeight="200.0" prefWidth="426.0">
+        <columns>
+          <TableColumn fx:id="date" prefWidth="75.0" text="date" />
+          <TableColumn fx:id="price" prefWidth="75.0" text="price" />
+            <TableColumn fx:id="petName" prefWidth="75.0" text="Pet Name" />
+            <TableColumn fx:id="veterinar" prefWidth="113.0" text="Veterenarian" />
+            <TableColumn fx:id="vaccineType" prefWidth="87.0" text="Vaccine" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>
