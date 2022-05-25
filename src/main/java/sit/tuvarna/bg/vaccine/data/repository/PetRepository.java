@@ -13,7 +13,7 @@ public class PetRepository implements DAORepository<Pet> {
 
     private static final Logger log = Logger.getLogger(PetRepository.class);
 
-    private static PetRepository getInstance() {
+    public static PetRepository getInstance() {
         return PetRepository.PetRepositoryHolder.INSTANCE;
     }
 
