@@ -101,7 +101,7 @@ public class HelloController implements EventHandler<MouseEvent> {
             URL pathAdminWindow = getClass().getResource("/sit/tuvarna/bg/vaccine/presentation.views/VeterinsarProfile.fxml");
             root= FXMLLoader.load(pathAdminWindow);
             Stage stage=new Stage();
-            stage.setTitle("Client Window");
+            stage.setTitle("Veterinar Window");
             stage.setScene(new Scene(root));
             stage.show();
             ((Node)(mouseEvent.getSource())).getScene().getWindow().hide();

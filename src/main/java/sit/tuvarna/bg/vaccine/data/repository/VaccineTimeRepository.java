@@ -12,7 +12,7 @@ import java.util.List;
 public class VaccineTimeRepository implements DAORepository<VaccineTime> {
     private static final Logger log = Logger.getLogger(VaccineTimeRepository.class);
 
-    private static VaccineTimeRepository getInstance() {
+    public static VaccineTimeRepository getInstance() {
         return VaccineTimeRepository.VaccineTimeRepositoryHolder.INSTANCE;
     }
 

@@ -4,15 +4,17 @@ import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import sit.tuvarna.bg.vaccine.data.acces.Connection;
+import sit.tuvarna.bg.vaccine.data.entities.Client;
 import sit.tuvarna.bg.vaccine.data.entities.Vaccine;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class VaccineRepository implements DAORepository<Vaccine> {
     private static final Logger log = Logger.getLogger(VaccineRepository.class);
 
-    private static VaccineRepository getInstance() {
+    public static VaccineRepository getInstance() {
         return VaccineRepository.VaccineRepositoryHolder.INSTANCE;
     }
 
@@ -102,4 +104,32 @@ public class VaccineRepository implements DAORepository<Vaccine> {
         session.close();
         return vaccines;
     }
+
+    public Vaccine getVaccine(String vaccine) {
+
+        Session session= Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        List<Vaccine> vaccines =new ArrayList<>() ;
+
+        try{
+            String jpql="SELECT a FROM Vaccine a WHERE a.vaccine_name= :vaccine";
+
+            vaccines.addAll(session.createQuery(jpql,Vaccine.class).
+                    setParameter("vaccine",vaccine).getResultList());
+            log.info("Succesfully get all vaccine");
+
+        }catch (Exception ex){
+            log.error("Get vaccine error : "+ex.getCause());
+        }finally {
+            transaction.commit();
+            session.close();
+        }
+        if(vaccines.size()!=0){
+            return vaccines.get(0);}
+        else{
+            return null;
+        }
+
+    }
+
 }

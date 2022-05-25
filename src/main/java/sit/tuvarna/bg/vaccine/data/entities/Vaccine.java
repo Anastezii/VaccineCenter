@@ -21,7 +21,7 @@ public class Vaccine implements Serializable {
     @Column(name="vaccine_name",nullable = false,insertable = false,updatable = false)
     private String vaccine_name;
 
-    @ManyToOne(fetch =FetchType.LAZY )
+    @OneToOne(fetch =FetchType.LAZY )
     private VaccineTime vaccineTime;
 
     public Vaccine() {

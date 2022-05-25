@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import sit.tuvarna.bg.vaccine.data.acces.Connection;
 import sit.tuvarna.bg.vaccine.data.entities.Pet;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -103,4 +104,32 @@ public class PetRepository implements DAORepository<Pet> {
         session.close();
         return pets;
     }
+
+    public Pet getPet(String pet) {
+
+        Session session= Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        List<Pet> pets =new ArrayList<Pet>() ;
+
+        try{
+            String jpql="SELECT a FROM Pet a WHERE a.pet_name= :pet";
+
+            pets.addAll(session.createQuery(jpql,Pet.class).
+                    setParameter("pet",pet).getResultList());
+            log.info("Succesfully get all pet");
+
+        }catch (Exception ex){
+            log.error("Get pet error : "+ex.getCause());
+        }finally {
+            transaction.commit();
+            session.close();
+        }
+        if(pets.size()!=0){
+            return pets.get(0);}
+        else{
+            return null;
+        }
+
+    }
+
 }

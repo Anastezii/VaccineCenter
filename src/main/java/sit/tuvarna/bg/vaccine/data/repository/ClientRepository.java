@@ -5,14 +5,16 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import sit.tuvarna.bg.vaccine.data.acces.Connection;
 import sit.tuvarna.bg.vaccine.data.entities.Client;
+import sit.tuvarna.bg.vaccine.data.entities.Pet;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ClientRepository implements DAORepository<Client> {
     private static final Logger log = Logger.getLogger(ClientRepository.class);
 
-    private static ClientRepository getInstance() {
+    public static ClientRepository getInstance() {
         return ClientRepository.ClientRepositoryHolder.INSTANCE;
     }
 
@@ -102,4 +104,32 @@ public class ClientRepository implements DAORepository<Client> {
         session.close();
         return clients;
     }
+
+    public Client getClient(String client) {
+
+        Session session= Connection.openSession();
+        Transaction transaction=session.beginTransaction();
+        List<Client> clients =new ArrayList<>() ;
+
+        try{
+            String jpql="SELECT a FROM Client a WHERE a.name= :client";
+
+            clients.addAll(session.createQuery(jpql,Client.class).
+                    setParameter("client",client).getResultList());
+            log.info("Succesfully get all client");
+
+        }catch (Exception ex){
+            log.error("Get client error : "+ex.getCause());
+        }finally {
+            transaction.commit();
+            session.close();
+        }
+        if(clients.size()!=0){
+            return clients.get(0);}
+        else{
+            return null;
+        }
+
+    }
+
 }

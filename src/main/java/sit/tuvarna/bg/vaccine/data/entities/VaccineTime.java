@@ -36,15 +36,15 @@ public class VaccineTime implements Serializable {
     @JoinColumn(name="veterinarian",nullable = false)
     private Veterinarian veterinarian;
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name="vaccine_name",nullable = false)
-    private Set<Vaccine> vaccineSet;
+    private Vaccine vaccineSet;
 
 
     public VaccineTime() {
     }
 
-    public VaccineTime(Long id_vaccine_time, LocalDate vaccine_date, String vaccine_price, Client client, Veterinarian veterinarian, Set<Vaccine> vaccineSet) {
+    public VaccineTime(Long id_vaccine_time, LocalDate vaccine_date, String vaccine_price, Client client, Veterinarian veterinarian, Vaccine vaccineSet) {
         this.id_vaccine_time = id_vaccine_time;
         this.vaccine_date = vaccine_date;
         this.vaccine_price = vaccine_price;
@@ -70,11 +70,11 @@ public class VaccineTime implements Serializable {
         this.vaccine_date = vaccine_date;
     }
 
-    public Set<Vaccine> getVaccineSet() {
+    public Vaccine getVaccineSet() {
         return vaccineSet;
     }
 
-    public void setVaccineSet(Set<Vaccine> vaccineSet) {
+    public void setVaccineSet(Vaccine vaccineSet) {
         this.vaccineSet = vaccineSet;
     }
 
