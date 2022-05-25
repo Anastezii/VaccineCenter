@@ -1,5 +1,7 @@
 package sit.tuvarna.bg.vaccine.business.services;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -12,6 +14,8 @@ import sit.tuvarna.bg.vaccine.data.entities.*;
 import sit.tuvarna.bg.vaccine.data.repository.*;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class VaccineService {
 
@@ -132,6 +136,13 @@ public class VaccineService {
         vBox.setPadding(new Insets(30));
         dialogStage.setScene(new Scene(vBox));
         dialogStage.showAndWait();
+
+    }
+
+    public ObservableList<VaccineTime> getAllTask(){
+        List< VaccineTime> vaccineTimes=repository.getAll();
+        return FXCollections.observableList(vaccineTimes.stream().map(o->new VaccineTime(o.getVaccine_price(),o.getVaccine_date(),o.getPet(),
+                o.getClient(),o.getVaccineSet(),o.getVeterinarian())).collect(Collectors.toList()));
 
     }
 

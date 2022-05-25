@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Set;
 
 @Table(name="vaccine_time")
 @Entity
@@ -44,14 +43,25 @@ public class VaccineTime implements Serializable {
     public VaccineTime() {
     }
 
-    public VaccineTime(Long id_vaccine_time, LocalDate vaccine_date, String vaccine_price, Client client, Veterinarian veterinarian, Vaccine vaccineSet) {
-        this.id_vaccine_time = id_vaccine_time;
+
+
+    public VaccineTime(LocalDate vaccine_date, String vaccine_price, Pet pet, Client client, Veterinarian veterinarian, Vaccine vaccineSet) {
         this.vaccine_date = vaccine_date;
         this.vaccine_price = vaccine_price;
         this.pet = pet;
         this.client = client;
         this.veterinarian = veterinarian;
         this.vaccineSet = vaccineSet;
+    }
+
+    public VaccineTime(String vaccine_price, LocalDate vaccine_date, Pet pet, Client client, Vaccine vaccineSet, Veterinarian veterinarian) {
+        this.vaccine_date = vaccine_date;
+        this.vaccine_price = vaccine_price;
+        this.pet = pet;
+        this.client = client;
+        this.veterinarian = veterinarian;
+        this.vaccineSet = vaccineSet;
+
     }
 
     public Long getId_vaccine_time() {

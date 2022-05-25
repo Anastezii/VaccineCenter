@@ -60,6 +60,7 @@ public class PetClientController {
         category.setCellValueFactory(p->new ReadOnlyObjectWrapper(p.getValue().getPet_category()));
         sex.setCellValueFactory(p->new ReadOnlyObjectWrapper(p.getValue().getPet_sex()));
 
+
         tablePets.setItems(petsObservableList);
 
     }

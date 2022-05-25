@@ -46,12 +46,19 @@ public class Pet implements Serializable {
     private Set<VaccineTime> vaccineTimes;
 
     public Pet(String pet_name, String pet_weight, String pet_year_birth, PetType pet_type, String pet_sex, String pet_category) {
+
+
+    }
+
+    public Pet(String pet_name, String pet_weight, String pet_year_birth, PetType pet_type, String pet_sex, String pet_category, Client client, Set<VaccineTime> vaccineTimes) {
         this.pet_name = pet_name;
         this.pet_weight = pet_weight;
         this.pet_year_birth = pet_year_birth;
         this.pet_type = pet_type;
         this.pet_sex = pet_sex;
         this.pet_category = pet_category;
+        this.client = client;
+        this.vaccineTimes = vaccineTimes;
     }
 
     public Set<VaccineTime> getVaccineTimes() {
